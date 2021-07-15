@@ -1,6 +1,7 @@
 package com.mcjty.mytutorial.setup;
 
 import com.mcjty.mytutorial.blocks.*;
+import com.mcjty.mytutorial.dimension.surfacebuilders.FDZSurfaceBuilders;
 import com.mcjty.mytutorial.entities.WeirdMobEntity;
 import com.mcjty.mytutorial.items.FirstItem;
 import com.mcjty.mytutorial.items.WeirdMobEggItem;
@@ -35,6 +36,7 @@ public class Registration {
         TILES.register(FMLJavaModLoadingContext.get().getModEventBus());
         CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        FDZSurfaceBuilders.SURFACE_BUILDERS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
     public static final RegistryObject<FirstBlock> FIRSTBLOCK = BLOCKS.register("firstblock", FirstBlock::new);

@@ -3,6 +3,7 @@ package com.mcjty.mytutorial.dimension;
 import com.mcjty.mytutorial.dimension.biomes.FDZBiomes;
 import com.mojang.serialization.Codec;
 import net.minecraft.util.RegistryKey;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryLookupCodec;
 import net.minecraft.world.biome.Biome;
@@ -61,6 +62,7 @@ public class TutorialBiomeProvider extends BiomeProvider {
 
     @Override
     public Biome getNoiseBiome(int x, int y, int z) {
-        return biome;
+        return biomeRegistry.get(SPAWN.get(MathHelper.abs(MathHelper.floor(x/10))%SPAWN.size()).location());
+//        return biome;
     }
 }
