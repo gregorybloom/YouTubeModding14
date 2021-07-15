@@ -9,6 +9,8 @@ import net.minecraft.world.World;
 
 public class ModDimensions {
 
+    //      /execute in yourmodid:dimension_id run tp @a ~ ~ ~
+
     public static final RegistryKey<DimensionType> TUTDIM_TYPE = RegistryKey.create(Registry.DIMENSION_TYPE_REGISTRY, new ResourceLocation(MyTutorial.MODID, "tutdim"));
     public static final RegistryKey<World> TUTDIM = RegistryKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation(MyTutorial.MODID, "tutdim"));
 }

@@ -14,23 +14,7 @@
     "water_fog_color": 329011,
     "grass_color_modifier": "none"
   },
-    "surface_builder": {
-      "config": {
-        "top_material": {
-          "Properties": {
-            "snowy": "false"
-          },
-          "Name": "minecraft:grass_block"
-        },
-        "under_material": {
-          "Name": "minecraft:dirt"
-        },
-        "underwater_material": {
-          "Name": "minecraft:gravel"
-        }
-      },
-      "type": "minecraft:default"
-    },
+  "surface_builder": "mytutorial:fdz_surfacebuilder",
   "carvers": {},
   "features": [],
   "starts": [],
