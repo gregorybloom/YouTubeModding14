@@ -1,0 +1,59 @@
+{
+  "effects": {
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "fog_color": 12648408,
+    "foliage_color": 14745518,
+    "grass_color": 14745518,
+    "sky_color": 2105930,
+    "water_color": 14745518,
+    "water_fog_color": 329011,
+    "grass_color_modifier": "none"
+  },
+    "surface_builder": {
+      "config": {
+        "top_material": {
+          "Properties": {
+            "snowy": "false"
+          },
+          "Name": "minecraft:grass_block"
+        },
+        "under_material": {
+          "Name": "minecraft:dirt"
+        },
+        "underwater_material": {
+          "Name": "minecraft:gravel"
+        }
+      },
+      "type": "minecraft:default"
+    },
+  "carvers": {},
+  "features": [],
+  "starts": [],
+  "spawners": {
+    "monster": [
+    ],
+    "creature": [
+    ],
+    "ambient": [
+    ],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "creature_spawn_probability": 0,
+  "player_spawn_friendly": false,
+  "forge:registry_name": "mytutorial:evillake",
+  "precipitation": "rain",
+  "temperature": 0.8,
+  "temperature_modifier":"none",
+  "downfall": 0.9,
+  "category": "swamp",
+  "depth": -0.125,
+  "scale": 0.125
+}

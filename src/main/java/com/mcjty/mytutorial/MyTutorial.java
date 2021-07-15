@@ -1,5 +1,6 @@
 package com.mcjty.mytutorial;
 
+import com.mcjty.mytutorial.dimension.biomes.FDZBiomes;
 import com.mcjty.mytutorial.setup.ClientSetup;
 import com.mcjty.mytutorial.setup.Config;
 import com.mcjty.mytutorial.setup.ModSetup;
@@ -24,6 +25,8 @@ public class MyTutorial {
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_CONFIG);
 
         Registration.init();
+
+        FDZBiomes.addBiomeTypes();
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ModSetup::init);

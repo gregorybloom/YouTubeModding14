@@ -1,5 +1,6 @@
 package com.mcjty.mytutorial.dimension;
 
+import com.mcjty.mytutorial.dimension.biomes.FDZBiomes;
 import com.mojang.serialization.Codec;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.registry.Registry;
@@ -20,15 +21,22 @@ public class TutorialBiomeProvider extends BiomeProvider {
 
     private final Biome biome;
     private final Registry<Biome> biomeRegistry;
-    private static final List<RegistryKey<Biome>> SPAWN = Collections.singletonList(Biomes.PLAINS);
+    private static List<RegistryKey<Biome>> SPAWN = null;
 
     public TutorialBiomeProvider(Registry<Biome> biomeRegistry) {
         super(getStartBiomes(biomeRegistry));
         this.biomeRegistry = biomeRegistry;
-        biome = biomeRegistry.get(Biomes.PLAINS.location());
+        biome = biomeRegistry.get(FDZBiomes.getBiome("evillakeb").location());
     }
 
     private static List<Biome> getStartBiomes(Registry<Biome> registry) {
+        if(SPAWN == null) {
+            SPAWN = new java.util.ArrayList<RegistryKey<Biome>>();
+            SPAWN.add(Biomes.PLAINS);
+            SPAWN.add(FDZBiomes.getBiome("evillake"));
+            SPAWN.add(FDZBiomes.getBiome("evillakeb"));
+        }
+
         return SPAWN.stream().map(s -> registry.get(s.location())).collect(Collectors.toList());
     }
 
