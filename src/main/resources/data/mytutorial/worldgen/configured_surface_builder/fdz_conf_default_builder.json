@@ -1,0 +1,15 @@
+{
+  "type": "mytutorial:fdz_default_surfacebuilder_class",
+  "config": {
+    "top_material": {
+      "Name": "minecraft:cobblestone",
+      "Properties": {}
+    },
+    "under_material": {
+      "Name": "minecraft:dirt"
+    },
+    "underwater_material": {
+      "Name": "minecraft:dirt"
+    }
+  }
+}

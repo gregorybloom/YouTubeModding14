@@ -33,9 +33,10 @@ public class TutorialBiomeProvider extends BiomeProvider {
     private static List<Biome> getStartBiomes(Registry<Biome> registry) {
         if(SPAWN == null) {
             SPAWN = new java.util.ArrayList<RegistryKey<Biome>>();
-            SPAWN.add(Biomes.PLAINS);
-            SPAWN.add(FDZBiomes.getBiome("evillake"));
-            SPAWN.add(FDZBiomes.getBiome("evillakeb"));
+            //  * currently no longer driven by the Biome Provider and ChunkGenerator
+//            SPAWN.add(Biomes.PLAINS);
+//            SPAWN.add(FDZBiomes.getBiome("evillake"));
+//            SPAWN.add(FDZBiomes.getBiome("evillakeb"));
         }
 
         return SPAWN.stream().map(s -> registry.get(s.location())).collect(Collectors.toList());

@@ -1,5 +1,5 @@
 {
-  "type": "mytutorial:fdz_surfacebuilder",
+  "type": "mytutorial:fdz_empty_surfacebuilder_class",
   "config": {
     "top_material": {
       "Name": "minecraft:snow_block"

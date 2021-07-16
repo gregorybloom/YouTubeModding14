@@ -62,6 +62,8 @@ public class TutorialChunkGenerator extends ChunkGenerator {
         int x;
         int z;
 
+        //  * currently no longer driven by the Biome Provider and ChunkGenerator
+
         for (x = 0; x < 16; x++) {
             for (z = 0; z < 16; z++) {
                 chunk.setBlockState(pos.set(x, 0, z), bedrock, false);

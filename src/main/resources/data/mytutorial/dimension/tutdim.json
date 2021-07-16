@@ -4,6 +4,8 @@
     "biome_source": {
       "type": "minecraft:checkerboard",
       "biomes": [
+        "mytutorial:evillaked",
+        "mytutorial:evillakec",
         "mytutorial:evillakeb",
         "mytutorial:evillake"
       ]
