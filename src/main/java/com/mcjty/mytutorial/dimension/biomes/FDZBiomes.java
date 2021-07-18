@@ -36,11 +36,12 @@ public class FDZBiomes {
         return biomeList.get(name);
     }
 
-    public static final BiomeDictionary.Type MINE = BiomeDictionary.Type.getType("tutdim");
+    public static final BiomeDictionary.Type TUTDIM1_BIOMES = BiomeDictionary.Type.getType("tutdim1_biomes");
+    public static final BiomeDictionary.Type TUTDIM2_BIOMES = BiomeDictionary.Type.getType("tutdim2_biomes");
 
     public static void addBiomeTypes() {
         for (String key : biomeList.keySet()) {
-            BiomeDictionary.addTypes(biomeList.get(key), MINE, BiomeDictionary.Type.OCEAN);
+            BiomeDictionary.addTypes(biomeList.get(key), TUTDIM2_BIOMES, BiomeDictionary.Type.OCEAN);
         }
     }
 

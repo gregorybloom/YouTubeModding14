@@ -41,9 +41,6 @@
   "scale": 0.125,
   "features": [
     [
-      "minecraft:ore_debris_small"
-    ],
-    [
       "minecraft:acacia"
     ]
   ]

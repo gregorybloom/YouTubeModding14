@@ -11,9 +11,9 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 import java.util.Random;
 
-public class FDZWhackTreeFeature extends Feature {
+public class FDZBasicTreeFeature extends Feature {
 
-    public FDZWhackTreeFeature(Codec p_i231953_1_) {
+    public FDZBasicTreeFeature(Codec p_i231953_1_) {
         super(p_i231953_1_);
     }
 

@@ -15,7 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class FDZFeatures {
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, MyTutorial.MODID);
 
-//    public static final RegistryObject<Feature<NoFeatureConfig>> WHACKTREE_FDZ = FEATURES.register("whacktree", () -> new FDZWhackTreeFeature(NoFeatureConfig.CODEC));
+//    public static final RegistryObject<Feature<NoFeatureConfig>> WHACKTREE_FDZ = FEATURES.register("basictree", () -> new FDZBasicTreeFeature(NoFeatureConfig.CODEC));
 
 //    public static final RegistryObject<Feature<BlockStateFeatureConfig>> TEST_LAKE = FEATURES.register("feature_test_lake", () -> new TestLake(BlockStateFeatureConfig::deserialize));
 

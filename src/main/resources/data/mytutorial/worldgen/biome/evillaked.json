@@ -16,7 +16,6 @@
   },
   "surface_builder": "mytutorial:fdz_conf_empty_builder",
   "carvers": {},
-  "starts": [],
   "spawners": {
     "monster": [
     ],
@@ -39,12 +38,12 @@
   "category": "swamp",
   "depth": -0.125,
   "scale": 0.125,
+  "starts": [
+    "mytutorial:fdz_conf_simple_structure_feature"
+  ],
   "features": [
     [
-      "minecraft:ore_debris_small"
-    ],
-    [
-      "mytutorial:fdz_conf_whacktree_builder"
+      "mytutorial:fdz_conf_birchtree_builder"
     ]
   ]
 

@@ -1,0 +1,63 @@
+{
+  "type": "minecraft:decorated",
+  "config": {
+    "decorator": {
+      "type": "minecraft:count",
+      "config": {
+        "count": 4
+      }
+    },
+    "feature": {
+      "type": "minecraft:tree",
+      "config": {
+        "ignore_vines": true,
+        "minimum_size": {
+          "type": "minecraft:two_layers_feature_size",
+          "min_clipped_height": 0,
+          "limit": 2,
+          "lower_size": 0,
+          "upper_size": 3
+        },
+        "dirt_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:dirt"
+          }
+        },
+        "sapling_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:stone"
+          }
+        },
+        "trunk_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:jungle_log",
+            "Properties": {
+              "axis": "x"
+            }
+          }
+        },
+        "foliage_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:stone"
+          }
+        },
+        "trunk_placer": {
+          "type": "minecraft:dark_oak_trunk_placer",
+          "base_height": 5,
+          "height_rand_a": 2,
+          "height_rand_b": 0
+        },
+        "foliage_placer": {
+          "type": "minecraft:dark_oak_foliage_placer",
+          "radius": 2,
+          "offset": 0
+        },
+        "decorators": []
+      }
+    }
+  }
+}

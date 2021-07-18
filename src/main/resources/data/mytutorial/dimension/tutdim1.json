@@ -1,5 +1,5 @@
 {
-  "type": "mytutorial:tutdim",
+  "type": "minecraft:overworld",
   "generator": {
     "biome_source": {
       "type": "minecraft:checkerboard",

@@ -26,7 +26,7 @@ public class MyTutorial {
 
         Registration.init();
 
-//        FDZBiomes.addBiomeTypes();
+        FDZBiomes.addBiomeTypes();
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ModSetup::init);
