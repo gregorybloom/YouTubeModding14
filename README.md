@@ -9,6 +9,13 @@ https://github.com/McJty/YouTubeModding14
 
 ## **Important Note**
 
+This is meant to be a continuation/spinoff of McJty's tutorials.  It assumes you have the skills necessary to handle that much, so start there.  
+
+Other skills you should need:
+
+1) Learning the basics of JSON
+2) learning how to read `run/logs/latest.log`
+
 I have almost zero experience modding minecraft.  If you have questions, there are two discords that have experienced users: Modded Minecraft, and Minecraft Modded Development.  A search for these discords will help you.
 
 <br>
@@ -77,7 +84,9 @@ Use the JSON-related resources above if you want to understand the contents of t
 
 In this case we use a JSON value of `generator.biome_source.type = "minecraft:checkerboard"` to make it easy to fly around in creative and glance at everything.
 
-And technically we are done!  The "`tutdim1.json`" file may have custom biomes, but that's not necessary.  For a first test, change them to minecraft standard biome types under `generator.biome_source.biomes`
+And technically we are done!
+
+For a first test, feel free to edit the `tutdim1.json` JSON to include other minecraft standard biome types.  The Biome list is inside the JSON object at `generator.biome_source.biomes`
 
 > Ex: "minecraft:dark_forest", "minecraft:badlands", etc
 

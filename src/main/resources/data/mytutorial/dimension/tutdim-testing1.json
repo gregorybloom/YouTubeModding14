@@ -4,8 +4,10 @@
     "biome_source": {
       "type": "minecraft:checkerboard",
       "biomes": [
-        "minecraft:plains",
-        "minecraft:forest"
+        "mytutorial:evillake",
+        "mytutorial:evillakeb",
+        "mytutorial:evillakec",
+        "mytutorial:evillaked"
       ]
     },
     "seed": 0,
