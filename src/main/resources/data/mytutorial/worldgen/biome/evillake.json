@@ -57,8 +57,7 @@
   "scale": 0.125,
   "carvers": {
     "air": [
-      "minecraft:cave",
-      "mytutorial:fdz_conf_basic_carver"
+      "minecraft:cave"
     ]
   }
 }
