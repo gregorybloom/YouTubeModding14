@@ -116,3 +116,40 @@ With this you've added a new unique biome to your dimension!
 ### **Biome Generated Content**
 
 Biomes
+
+
+.
+.
+.
+. (more to come here) . . . .
+
+<hr>
+
+<hr>
+
+### "Ten Phases of Biome Feature Generation"
+
+Biome JSONs define features in an "array of arrays", allowing each list to be executed in distinct steps.  Minecraft organizes features this way into ten arrays held by `features`.  
+
+The below reference list is taken from Minecraft Overworld Biomes, and should give you an idea of what features are typically generated in each 'phase'.
+
+[Full phase-sorted lists are here!](https://github.com/gregorybloom/YouTubeModding14/tree/1.16/readme/reference/featurelists/)
+
+1) End Island Decorations
+2) Surface Lakes
+> `minecraft:lake_water` <br> `minecraft:lake_lava`
+3) Rock Protrusions and Pillars
+> `minecraft:forest_rock` <br> `minecraft:iceberg_packed`
+4) Fossils and 'Monster Rooms'
+> `minecraft:monster_room`
+5) Certain special features
+> `minecraft:blue_ice` <br> `large_basalt_columns`
+6) _currently unused_
+7) Ore Generation (including patches of dirt, clay, etc)
+> `minecraft:ore_dirt` <br> `minecraft:ore_andesite` <br> `minecraft:ore_iron` <br> `minecraft:disk_sand`
+8) Nether Ore Gen (glowstone, quartz, soul fire flames)
+> `minecraft:glowstone` <br> `minecraft:ore_quartz_nether`
+9) Vegetation Patches, Water/Lava Springs
+> `minecraft:plain_vegetation` <br> `minecraft:patch_sugar_cane` <br> `minecraft:spring_lava`
+10) Limited Final Features (void start platform, top layer freeze?)
+> `minecraft:freeze_top_layer`
