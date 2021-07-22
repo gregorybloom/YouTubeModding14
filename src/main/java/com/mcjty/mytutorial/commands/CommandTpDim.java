@@ -29,13 +29,15 @@ public class CommandTpDim implements Command<CommandSource> {
         ServerPlayerEntity player = context.getSource().getPlayerOrException();
         int x = player.blockPosition().getX();
         int z = player.blockPosition().getZ();
-        if (player.getCommandSenderWorld().dimension().equals(ModDimensions.TUTDIM1)) {
+        /*
+        if (player.getCommandSenderWorld().dimension().equals(ModDimensions.TUTDIM2)) {
             ServerWorld world = player.getServer().getLevel(World.OVERWORLD);
             TeleportationTools.teleport(player, world, new BlockPos(x, 200, z));
         } else {
-            ServerWorld world = player.getServer().getLevel(ModDimensions.TUTDIM1);
+            ServerWorld world = player.getServer().getLevel(ModDimensions.TUTDIM2);
             TeleportationTools.teleport(player, world, new BlockPos(x, 200, z));
         }
+        /**/
         return 0;
     }
 

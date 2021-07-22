@@ -9,14 +9,14 @@ https://github.com/McJty/YouTubeModding14
 
 ## **Important Note**
 
-This is meant to be a continuation/spinoff of McJty's tutorials.  It assumes you have the skills necessary to handle that much, so start there.  
+**This is a continuation/spinoff of McJty's tutorials.  It assumes you have completed those tutorials, so start there.** 
 
 Other skills you should need:
 
 1) Learning the basics of JSON
 2) learning how to read `run/logs/latest.log`
 
-I have almost zero experience modding minecraft.  If you have questions, there are two discords that have experienced users: Modded Minecraft, and Minecraft Modded Development.  A search for these discords will help you.
+**I have almost zero experience modding minecraft.**  If you have questions, there are two discords that have experienced users: Modded Minecraft, and Minecraft Modded Development.  A search for these discords will help you.
 
 <br>
 
@@ -68,31 +68,30 @@ There is too much in worldgen for me to directly break it down at once.  I start
 
 ### **Dimension Setup**
 
-The first thing I did was check on how Registering the dimension works.  The code uses the ModDimensions class to do this.
+The path and naming of your custom JSON files matter.  The folder path in all of them will begin like `resources.data.<modid>`, followed by the folders for that particular JSON resource.
 
-[com.mcjty.mytutorial.dimension ModDimensions.java](https://github.com/gregorybloom/YouTubeModding14/blob/1.16/src/main/java/com/mcjty/mytutorial/dimension/ModDimensions.java)
+McJty's code includes Key Registry for the tutorial dimension, but this is only used for the custom Tp command he provides.  We've commented out the teleport code as well as the Key Registry for the dim (and did some renaming for it and the dimension type).
 
-Here we have our dimension type plus a few dimensions.  This class registers our dimensions/types just so long as it is included somewhere.
-
-(This is done within McJty's code - if awkwardly. More deliberate inclusion would be better?)
-
-Then the JSONs were re-named.  They are located in:
+They are located in:
 * [resources.data.mytutorial.dimension](https://github.com/gregorybloom/YouTubeModding14/tree/1.16/src/main/resources/data/mytutorial/dimension)
 * [resources.data.mytutorial.dimension_type](https://github.com/gregorybloom/YouTubeModding14/tree/1.16/src/main/resources/data/mytutorial/dimension_type)
 
-Use the JSON-related resources above if you want to understand the contents of them better.
-
 In this case we use a JSON value of `generator.biome_source.type = "minecraft:checkerboard"` to make it easy to fly around in creative and glance at everything.
 
-And technically we are done!
+And technically we are done!  Yes, just adding the JSON 
+<br>
 
 For a first test, feel free to edit the `tutdim1.json` JSON to include other minecraft standard biome types.  The Biome list is inside the JSON object at `generator.biome_source.biomes`
 
+You should see this naming convention a lot in modding minecraft: "\<modid\>:name"
+
 > Ex: "minecraft:dark_forest", "minecraft:badlands", etc
+
+Try adding your own "minecraft:" biomes from the [complete list](https://github.com/gregorybloom/YouTubeModding14/blob/1.16/readme/reference/biome_list.txt)
 
 ### **Dimension Wrapup**
 
-With just a couple of minecraft biomes, two simple JSON files, code from ModDimensions (and code elsewhere in setup to include ModDomensions), you are finished specifying the basics of a new dimension.
+With just a couple of minecraft biomes, two simple JSON files, code from ModDimensions (and code elsewhere in setup to include ModDomensions), you are finished specifying the basics of a new multi-biome dimension.
 
 Visit it with:
 > `/execute in yourmodid:dimension_id run tp @a ~ ~ ~`
@@ -103,7 +102,7 @@ Visit it with:
 
 ### **Biome Setup**
 
-Biome JSON can be set up without any loading code. The most basic sample biome is the `evillake.json`, found here:
+Biome JSON can be set up without any loading code. The most basic sample biome is the `tut1b_biome1_mcdef_red.json`, found here:
 
 * [resources.data.mytutorial.worldgen.biome](https://github.com/gregorybloom/YouTubeModding14/tree/1.16/src/main/resources/data/mytutorial/worldgen/biome)
 
@@ -113,9 +112,90 @@ You can add it to the biomes in `tutdim1.json`.  It does not define any unique f
 
 With this you've added a new unique biome to your dimension!
 
+### **Spawners**
+
+Biome spawning behavior does not use a separate JSON file.  Their data is found in the JSON biome at `.spawners`, and has  six arrays: `monster`, `creature`, `ambient`, `water_creature`, `water_ambient`, `misc`.
+
+An example of what might be contained in your `.spawner.monster` JSON block could look like this. 
+
+    [
+          {
+            "type": "minecraft:spider",
+            "weight": 100,
+            "minCount": 4,
+            "maxCount": 4
+          },
+          {
+            "type": "minecraft:zombie",
+            "weight": 95,
+            "minCount": 4,
+            "maxCount": 4
+          } 
+    ]
+
+The provided data pack in resources can be helpful here if you want to mimic minecraft spawn distribution.
+
+The `.spawn_costs` JSON data isn't actually set in the default files, so I am leaving this blank (feel free to research it youself!).
+
+## **Biome Carvers**
+
+Carvers have incredibly simple JSON files, like [the example here (within path `resources.data.mytutorial.worldgen.configured_carver`)](https://github.com/gregorybloom/YouTubeModding14/blob/1.16/src/main/resources/data/mytutorial/worldgen/configured_carver/fdz_conf_basic_carver.json).  
+
+There are only six in default Minecraft (as seen in the downloadable resource).  If you create a custom-carver or wish to change the ones in the biome, they are in the JSON at `.carvers` and cover two types: `air` and `liquid`.
+
+You can see an example of this at the bottom of the `tut1b_biome1_mcdef_red.json` file ( in `resources.data.mytutorial.worldgen.biome`).
+
+Carvers often create features that cross biome borders, so it is useful to have the same carvers for biomes in the same dimension.
+
+> "minecraft:cave" and "minecraft:canyon" are found in nearly overworld biomes for its air carvers.
+<br>
+> However, the ocean biomes use "minecraft:ocean_cave" instead for its air-cave carver, and it uses liquid carvers: 
+> * "minecraft:underwater_canyon"
+> * "minecraft:underwater_cave"
+
+You can add a canyon carver to `tut1b_biome1_mcdef_red.json`, or make a custom carver with a high occurrence rate, and then run this to see all the canyons you'll get.
+
+## **Surface Builders**
+
+### Configured Surface Builders
+
+The `.surface_builder` value in the Biome JSON usually is a single string, naming a desired default or custom `worldgen.configured_surface_builder` resource.
+
+> You can also embed a custom configured surface builder as well, and an example of this is in `tut1b_biome1_mcdef_cyan.json` (at [`resources.data.mytutorial.worldgen.biome`](https://github.com/gregorybloom/YouTubeModding14/tree/1.16/src/main/resources/data/mytutorial/worldgen/biome))
+
+There are many surface builders in default Minecraft, usually paired with a related biome.  There are some example surface builder JSONs at:<br>
+[`resources.data.mytutorial.worldgen.configured_surface_builder`](https://github.com/gregorybloom/YouTubeModding14/tree/1.16/src/main/resources/data/mytutorial/worldgen/configured_surface_builder)
+
+In the three examples, the primary notable trait is the `.type` value.  This references what **Surface Builder** is called from the code.  One pulls the default Surface Builder, the others pull custom ones set up for the Tutorial Dimension 1.
+
+### Surface Builders
+
+What's the difference between a Surface Builder and a Configured Surface Builder?
+
+Configured Surface Builders define the blocks that the Surface Builder will actually use.  The JSON file defines which Surface Builder (in code) will actually use it.
+
+Biome JSON files then, call the Configured Surface Builder JSON name they want to use, and that one will name which Surface Builder it wants.
+
+
+
+<br>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
 ### **Biome Generated Content**
 
-Biomes
+Biome JSON files have a lot more elements than dimensions.  The wiki and github tool in **Resources** should make it much easier to understand the individual biome elements.  But there are still two 
 
 
 .
@@ -153,3 +233,12 @@ The below reference list is taken from Minecraft Overworld Biomes, and should gi
 > `minecraft:plain_vegetation` <br> `minecraft:patch_sugar_cane` <br> `minecraft:spring_lava`
 10) Limited Final Features (void start platform, top layer freeze?)
 > `minecraft:freeze_top_layer`
+
+<br>
+
+## Dimension Noise Settings
+
+### **Noise Settings Setup**
+...
+<br>
+

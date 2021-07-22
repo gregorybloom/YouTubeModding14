@@ -4,10 +4,10 @@
     "biome_source": {
       "type": "minecraft:checkerboard",
       "biomes": [
-        "mytutorial:evillake",
-        "mytutorial:evillakeb",
-        "mytutorial:evillakec",
-        "mytutorial:evillaked"
+        "mytutorial:tut1b_biome1_mcdef_red",
+        "mytutorial:tut1b_biome2_mcdef_snow",
+        "mytutorial:tut1b_biome3_mcdef_cyan",
+        "mytutorial:tut1b_biome4_mcdef_empty"
       ]
     },
     "seed": 0,

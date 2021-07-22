@@ -1,5 +1,5 @@
 {
-  "type": "mytutorial:tutdim_type2",
+  "type": "mytutorial:tutdim_type1b",
   "generator": {
     "biome_source": {
       "type": "minecraft:checkerboard",
@@ -11,7 +11,7 @@
       ]
     },
     "seed": 0,
-    "settings": "mytutorial:fdz_tut2_noise",
+    "settings": "mytutorial:fdz_tut1b_noise",
     "type": "minecraft:noise"
   }
 }

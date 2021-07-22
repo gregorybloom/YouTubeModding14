@@ -2,7 +2,7 @@
   "type": "mytutorial:fdz_empty_surfacebuilder_class",
   "config": {
     "top_material": {
-      "Name": "minecraft:snow_block"
+      "Name": "minecraft:cobblestone"
     },
     "under_material": {
       "Name": "minecraft:dirt"
