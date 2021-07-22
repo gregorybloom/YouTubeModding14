@@ -6,33 +6,17 @@
       "block_search_extent": 8,
       "offset": 2.0
     },
-    "fog_color": 11341840,
+    "fog_color": 12648408,
     "foliage_color": 14745518,
-    "grass_color": 4326661,
-    "sky_color": 14747913,
-    "water_color": 14747913,
+    "grass_color": 14745518,
+    "sky_color": 329011,
+    "water_color": 14745518,
     "water_fog_color": 329011,
     "grass_color_modifier": "none"
   },
-    "surface_builder": {
-      "config": {
-        "top_material": {
-          "Properties": {
-            "snowy": "false"
-          },
-          "Name": "minecraft:grass_block"
-        },
-        "under_material": {
-          "Name": "minecraft:dirt"
-        },
-        "underwater_material": {
-          "Name": "minecraft:gravel"
-        }
-      },
-      "type": "minecraft:default"
-    },
+  "surface_builder": "mytutorial:fdz_conf_default_builder",
+  "carvers": {},
   "features": [],
-  "starts": [],
   "spawners": {
     "monster": [
     ],
@@ -47,7 +31,7 @@
   "spawn_costs": {},
   "creature_spawn_probability": 0,
   "player_spawn_friendly": false,
-  "forge:registry_name": "mytutorial:evillake",
+  "forge:registry_name": "mytutorial:tut1b_biome2_mcdef_snow",
   "precipitation": "rain",
   "temperature": 0.8,
   "temperature_modifier":"none",
@@ -55,9 +39,7 @@
   "category": "swamp",
   "depth": -0.125,
   "scale": 0.125,
-  "carvers": {
-    "air": [
-      "minecraft:cave"
-    ]
-  }
+  "starts": [
+    "mytutorial:fdz_conf_simple_structure_feature"
+  ]
 }

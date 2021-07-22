@@ -6,16 +6,33 @@
       "block_search_extent": 8,
       "offset": 2.0
     },
-    "sky_color": 15794042,
-    "fog_color": 16515010,
-    "water_color": 8290319,
-    "water_fog_color": 11839768,
+    "sky_color": 7907327,
+    "fog_color": 12638463,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
     "foliage_color": 14745518,
     "grass_color": 7907327,
     "grass_color_modifier": "none"
   },
-  "surface_builder": "mytutorial:fdz_conf_empty_builder",
+  "surface_builder": {
+    "config": {
+      "top_material": {
+        "Properties": {
+          "snowy": "false"
+        },
+        "Name": "minecraft:grass_block"
+      },
+      "under_material": {
+        "Name": "minecraft:dirt"
+      },
+      "underwater_material": {
+        "Name": "minecraft:gravel"
+      }
+    },
+    "type": "minecraft:default"
+  },
   "carvers": {},
+  "starts": [],
   "spawners": {
     "monster": [
     ],
@@ -30,7 +47,7 @@
   "spawn_costs": {},
   "creature_spawn_probability": 0,
   "player_spawn_friendly": false,
-  "forge:registry_name": "mytutorial:evillaked",
+  "forge:registry_name": "mytutorial:tut1b_biome1_mcdef_cyan",
   "precipitation": "rain",
   "temperature": 0.8,
   "temperature_modifier":"none",
@@ -38,13 +55,9 @@
   "category": "swamp",
   "depth": -0.125,
   "scale": 0.125,
-  "starts": [
-    "mytutorial:fdz_conf_simple_structure_feature"
-  ],
   "features": [
     [
-      "mytutorial:fdz_conf_birchtree_builder"
+      "minecraft:acacia"
     ]
   ]
-
 }
