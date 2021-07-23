@@ -224,7 +224,7 @@ Biome JSON files then, call the Configured Surface Builder JSON name they want t
 
 A feature object in the *configured_feature JSON* files have a `type` and a `config`.  The `type` is the feature, and the `config` is how to configure that feature.  It takes a `decorator` and a `feature`.
 
-All "minecraft:decorated" does is take a `decorator` by `config` and then run that decorator to get a new position.  It then feeds that new position to the feature (from its config).
+All "minecraft:decorated" does is take a `decorator` by `config` and then run that decorator to get a new position.  It then feeds that new position to the feature.
 
 With the haystack example, you end up with a series of decorators to establish the position you want to place at, and then you provide a feature to put there.
 
