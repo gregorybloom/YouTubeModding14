@@ -109,9 +109,9 @@ Here we set a custom dimension type.
 
 * [resources.data.mytutorial.dimension_type](https://github.com/gregorybloom/YouTubeModding14/tree/1.16/src/main/resources/data/mytutorial/dimension_type)
 
-I strongly suggest using the wikis provided in Resources to familiarize yourself with the content.  Dimension Type 
+I strongly suggest using the wikis provided in Resources to familiarize yourself with the content to get an idea of what appears in Dimension Type.
 
-### **Dimension Type**
+### **Dimension Noise**
 
 
 
@@ -210,19 +210,43 @@ Biome JSON files then, call the Configured Surface Builder JSON name they want t
 
 
 
+
+
+
 <br>
 
 <br>
 
 ## Creating Features (JSON)
 
-### **Creating Trees**
 
+### **Configured Features Pieces**
 
+A feature object in the *configured_feature JSON* files have a `type` and a `config`.  The `type` is the feature, and the `config` is how to configure that feature.  It takes a `decorator` and a `feature`.
 
+All "minecraft:decorated" does is take a `decorator` by `config` and then run that decorator to get a new position.  It then feeds that new position to the feature (from its config).
 
+With the haystack example, you end up with a series of decorators to establish the position you want to place at, and then you provide a feature to put there.
 
+### **Creating Haystack Example**
 
+So creating custom features is a little more complicated.  In this example, we implement the 'pile_hay' that's connected to the village structure spawning and instead have it generate in the world.
+
+Below is a link to the feature, and an image of how it would appear in the [Feature Generator](https://misode.github.io/worldgen/feature/).
+
+[data.mytutorial.worldgen.configured_feature.fdz_testing_haystack.json](https://github.com/gregorybloom/YouTubeModding14/blob/1.16/src/main/resources/data/mytutorial/worldgen/configured_feature/fdz_testing_haystack.json)
+
+![Haypile Ref](https://github.com/gregorybloom/YouTubeModding14/blob/1.16/readme/imgs/pile_hay_ref.PNG?raw=true)
+
+The `count` is the outermost **Decorator** and picks how many positions to attempt in the chunk.  (You can play with the Feature Generator to see the various types of `count` decorators).
+
+The `square` **Decorator** then randomizes the positions to an x/z spot in the chunk.
+
+The `heightmap` snaps all the positions to the terrain.
+
+And lastly, the "minecraft:pile_hay" is a reference to the **Configured Feature** to actually place at that position.
+
+Thus, this **Configured Feature** sets up the position for the spawning of another **Configured Feature**.
 
 
 
