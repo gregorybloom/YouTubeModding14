@@ -1,0 +1,48 @@
+{
+  "effects": {
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "sky_color": 15794042,
+    "fog_color": 16515010,
+    "water_color": 8290319,
+    "water_fog_color": 11839768,
+    "foliage_color": 14745518,
+    "grass_color": 7907327,
+    "grass_color_modifier": "none"
+  },
+  "surface_builder": "mytutorial:fdz_conf_mcdefault_builder",
+  "carvers": {},
+  "spawners": {
+    "monster": [
+    ],
+    "creature": [
+    ],
+    "ambient": [
+    ],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "creature_spawn_probability": 0,
+  "player_spawn_friendly": false,
+  "forge:registry_name": "mytutorial:testing1_biome1_mcdef_hay",
+  "precipitation": "rain",
+  "temperature": 0.8,
+  "temperature_modifier":"none",
+  "downfall": 0.9,
+  "category": "swamp",
+  "depth": -0.125,
+  "scale": 0.125,
+  "starts": [],
+  "features": [
+    [
+      "mytutorial:fdz_testing_haystack"
+    ]
+  ]
+
+}
